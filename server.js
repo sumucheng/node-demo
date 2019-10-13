@@ -24,7 +24,8 @@ var server = http.createServer(function(request, response) {
   console.log("有请求！路径（带查询参数）为：" + pathWithQuery);
 
   if (path === "/") {
-    console.log(port+" "+path+' '+query );
+    console.log(port+"\n");
+    console.log(path);
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html;charset=utf-8");
     response.write(`
@@ -33,7 +34,8 @@ var server = http.createServer(function(request, response) {
     `);
     response.end();
   } else if (path === "/style.css") {
-    console.log(port+" "+path+' '+query );
+    console.log(port+"\n");
+    console.log(path);
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/css;charset=utf-8");
     response.write(`h1{color: red;}`);
