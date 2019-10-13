@@ -4,7 +4,7 @@ var url = require("url");
 var port = process.argv[2];
 
 if (!port) {
-  console.log("请指定端口号好不啦？\nnode server.js 8888 这样不会吗？");
+  console.log("请指定端口号=\nnode server.js 8888");
   process.exit(1);
 }
 
@@ -31,7 +31,7 @@ var server = http.createServer(function(request, response) {
     <h1>红色的字</h1>
     `);
     response.end();
-  } else if (path === "./style.css") {
+  } else if (path === "/style.css") {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/css;charset=utf-8");
     response.write(`h1{color: red;}`);
