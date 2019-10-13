@@ -24,14 +24,16 @@ var server = http.createServer(function(request, response) {
   console.log("有请求！路径（带查询参数）为：" + pathWithQuery);
 
   if (path === "/") {
+    console.log(port+" "+path+' '+query );
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html;charset=utf-8");
     response.write(`
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/style.css">
     <h1>红色的字</h1>
     `);
     response.end();
   } else if (path === "/style.css") {
+    console.log(port+" "+path+' '+query );
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/css;charset=utf-8");
     response.write(`h1{color: red;}`);
